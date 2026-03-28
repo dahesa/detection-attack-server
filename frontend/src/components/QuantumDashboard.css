@@ -1,0 +1,1402 @@
+/* Quantum Dashboard Styles */
+.quantum-dashboard {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Login Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+}
+
+.demo-credentials {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.demo-credentials code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* Real-time Indicator */
+.quantum-real-time-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.quantum-real-time-indicator.connected {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+}
+
+.quantum-real-time-indicator.disconnected {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff4444;
+  color: #ff4444;
+}
+
+/* Header Styles */
+.quantum-command-center {
+  padding: 1rem;
+}
+
+.quantum-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quantum-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00ff88, #00ccff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.quantum-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.quantum-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.status-indicator {
+  font-weight: bold;
+}
+
+.status-indicator.online {
+  color: #00ff88;
+}
+
+.status-indicator.offline {
+  color: #ff4444;
+}
+
+.user-info {
+  color: #00ccff;
+}
+
+.ai-assistant-btn, .logout-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ai-assistant-btn:hover, .logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* System Status */
+.quantum-system-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quantum-status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.quantum-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.quantum-status-online {
+  background: #00ff88;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Tab Container */
+.quantum-tab-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.quantum-tab-buttons {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  overflow-x: auto;
+}
+
+.quantum-tab-button {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.quantum-tab-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.quantum-tab-button.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-bottom: 2px solid #00ff88;
+}
+
+.quantum-tab-content {
+  padding: 1rem;
+  min-height: 600px;
+}
+
+/* Panel Styles */
+.quantum-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quantum-panel.full-height {
+  min-height: 700px;
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #00ccff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Stat Cards */
+.quantum-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.quantum-stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.quantum-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.quantum-stat-card.loading {
+  opacity: 0.7;
+}
+
+.loading-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.quantum-stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.quantum-stat-value.ai { color: #00ccff; }
+.quantum-stat-value.quantum { color: #ff00ff; }
+.quantum-stat-value.critical { color: #ff4444; }
+.quantum-stat-value.high { color: #ffaa00; }
+.quantum-stat-value.medium { color: #ffff00; }
+
+.trend {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.trend.up { color: #00ff88; }
+.trend.down { color: #ff4444; }
+
+.quantum-stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Threat Map */
+.quantum-map-container {
+  position: relative;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.map-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.map-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.map-subtitle {
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.map-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.quantum-map-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: threatPulse 2s infinite;
+}
+
+.quantum-map-point::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+}
+
+.quantum-map-point.threat-critical {
+  background: #ff4444;
+  box-shadow: 0 0 20px #ff4444;
+}
+
+.quantum-map-point.threat-high {
+  background: #ffaa00;
+  box-shadow: 0 0 15px #ffaa00;
+}
+
+.quantum-map-point.threat-medium {
+  background: #ffff00;
+  box-shadow: 0 0 10px #ffff00;
+}
+
+.quantum-map-point.threat-low {
+  background: #00ff88;
+  box-shadow: 0 0 5px #00ff88;
+}
+
+@keyframes threatPulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Logs Container */
+.quantum-logs-container {
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quantum-log-entry {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.quantum-log-entry:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quantum-log-time {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.quantum-log-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.quantum-log-ip {
+  font-weight: bold;
+  color: #00ccff;
+}
+
+.quantum-log-type {
+  color: #ffaa00;
+}
+
+.severity-critical { color: #ff4444; }
+.severity-high { color: #ffaa00; }
+.severity-medium { color: #ffff00; }
+.severity-low { color: #00ff88; }
+
+.blocked-badge {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.quantum-log-details {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.quantum-log-ai {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ai-insight {
+  background: rgba(0, 204, 255, 0.2);
+  color: #00ccff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.no-logs {
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Threat Level */
+.quantum-threat-level {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  border: 2px solid;
+}
+
+.quantum-threat-level.critical {
+  background: rgba(255, 68, 68, 0.2);
+  border-color: #ff4444;
+  color: #ff4444;
+  animation: criticalPulse 1s infinite;
+}
+
+.quantum-threat-level.high {
+  background: rgba(255, 170, 0, 0.2);
+  border-color: #ffaa00;
+  color: #ffaa00;
+}
+
+.quantum-threat-level.medium {
+  background: rgba(255, 255, 0, 0.2);
+  border-color: #ffff00;
+  color: #ffff00;
+}
+
+.quantum-threat-level.low {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+@keyframes criticalPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Performance */
+.quantum-performance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.performance-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+/* Threats Grid */
+.threats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.threat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.threat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.threat-card.threat-critical {
+  border-left: 4px solid #ff4444;
+}
+
+.threat-card.threat-high {
+  border-left: 4px solid #ffaa00;
+}
+
+.threat-card.threat-medium {
+  border-left: 4px solid #ffff00;
+}
+
+.threat-card.threat-low {
+  border-left: 4px solid #00ff88;
+}
+
+.threat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.threat-id {
+  font-weight: bold;
+  color: #00ccff;
+}
+
+.threat-severity {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.threat-severity.critical { background: rgba(255, 68, 68, 0.2); color: #ff4444; }
+.threat-severity.high { background: rgba(255, 170, 0, 0.2); color: #ffaa00; }
+.threat-severity.medium { background: rgba(255, 255, 0, 0.2); color: #ffff00; }
+.threat-severity.low { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+
+.threat-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.threat-description {
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.threat-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.threat-countermeasures ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.threat-countermeasures li {
+  margin-bottom: 0.25rem;
+}
+
+/* Attackers Grid */
+.attackers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.attacker-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.attacker-card:hover {
+  transform: translateY(-2px);
+}
+
+.attacker-card.threat-critical { border-left: 4px solid #ff4444; }
+.attacker-card.threat-high { border-left: 4px solid #ffaa00; }
+.attacker-card.threat-medium { border-left: 4px solid #ffff00; }
+.attacker-card.threat-low { border-left: 4px solid #00ff88; }
+
+.attacker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.attacker-ip {
+  font-weight: bold;
+  color: #00ccff;
+  font-size: 1.1rem;
+}
+
+.threat-level {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.threat-level.critical { background: rgba(255, 68, 68, 0.2); color: #ff4444; }
+.threat-level.high { background: rgba(255, 170, 0, 0.2); color: #ffaa00; }
+.threat-level.medium { background: rgba(255, 255, 0, 0.2); color: #ffff00; }
+.threat-level.low { background: rgba(0, 255, 136, 0.2); color: #00ff88; }
+
+.attacker-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.attacker-location, .attacker-geo {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+/* Web Config Form */
+.web-config-form {
+  max-width: 800px;
+}
+
+.config-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.config-section h3 {
+  margin-bottom: 1rem;
+  color: #00ccff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+}
+
+.config-save-btn {
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.config-save-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* AI Python System */
+.ai-python-container {
+  max-width: 1000px;
+}
+
+.ai-status-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.ai-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.ai-status.connected .status-indicator {
+  background: #00ff88;
+  animation: pulse 2s infinite;
+}
+
+.ai-status.testing .status-indicator {
+  background: #ffaa00;
+  animation: pulse 1s infinite;
+}
+
+.ai-status.error .status-indicator {
+  background: #ff4444;
+}
+
+.test-connection-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.test-connection-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ai-capabilities {
+  margin-bottom: 2rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.capability-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.capability-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.capability-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #00ccff;
+}
+
+.capability-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ai-performance {
+  margin-top: 2rem;
+}
+
+.performance-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.performance-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-label {
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #00ff88;
+}
+
+/* Quantum AI Console */
+.quantum-ai-console {
+  height: 400px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-y: auto;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 1rem;
+}
+
+.quantum-command-line {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.quantum-command-prompt {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.quantum-command-prompt.user {
+  color: #00ff88;
+}
+
+.quantum-command-prompt.ai {
+  color: #00ccff;
+}
+
+.command-message.user {
+  color: #ffffff;
+}
+
+.command-message.ai {
+  color: #cccccc;
+}
+
+.quantum-ai-commands {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.quantum-ai-command-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.quantum-ai-command-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #00ff88;
+  transform: translateY(-1px);
+}
+
+.quantum-ai-command-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* User Management */
+.user-management-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.user-form {
+  max-width: 600px;
+}
+
+.create-user-btn {
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.create-user-btn:hover {
+  transform: translateY(-2px);
+}
+
+.users-list-section {
+  margin-top: 2rem;
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-username {
+  font-weight: bold;
+  color: #00ccff;
+}
+
+.user-role {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.user-role.admin {
+  background: rgba(255, 68, 68, 0.2);
+  color: #ff4444;
+}
+
+.user-role.user {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+}
+
+.user-email {
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.user-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.status.active {
+  color: #00ff88;
+}
+
+.status.inactive {
+  color: #ff4444;
+}
+
+/* System Metrics */
+.metrics-container {
+  max-width: 1000px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.metric-card h4 {
+  margin-bottom: 1rem;
+  color: #00ccff;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #00ff88;
+}
+
+.metric-label {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.health-status {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.health-status h4 {
+  margin-bottom: 1rem;
+  color: #00ccff;
+}
+
+.health-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.health-indicator {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.health-indicator.healthy {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.health-indicator.unhealthy {
+  border-color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+/* AI Chat Modal */
+.ai-chat-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.ai-chat-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+}
+
+.ai-chat-header h3 {
+  margin: 0;
+  color: #00ccff;
+}
+
+.ai-chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.ai-chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.chat-message.user {
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  margin-left: auto;
+}
+
+.chat-message.ai {
+  background: rgba(0, 204, 255, 0.2);
+  border: 1px solid rgba(0, 204, 255, 0.3);
+  margin-right: auto;
+}
+
+.message-content {
+  line-height: 1.4;
+}
+
+.chat-message.loading {
+  opacity: 0.7;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 204, 255, 0.8);
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+.ai-chat-input {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 15px 15px;
+}
+
+.ai-chat-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px 0 0 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.ai-chat-input button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ai-chat-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quantum-title {
+    font-size: 1.8rem;
+  }
+  
+  .quantum-status {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .quantum-tab-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .quantum-tab-button {
+    min-width: 120px;
+    font-size: 0.8rem;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quantum-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quantum-ai-commands {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantum-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quantum-system-status {
+    grid-template-columns: 1fr;
+  }
+  
+  .threats-grid,
+  .attackers-grid,
+  .users-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

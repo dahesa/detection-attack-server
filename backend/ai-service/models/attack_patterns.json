@@ -1,0 +1,392 @@
+{
+  "GET:['or']": {
+    "pattern": "GET:['or']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 1.0,
+    "true_positives": 25,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055321",
+    "first_seen": "2026-02-17T00:20:47.410011",
+    "frequency": 25
+  },
+  "GET:['select', 'union']": {
+    "pattern": "GET:['select', 'union']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 1.0,
+    "true_positives": 19,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055325",
+    "first_seen": "2026-02-17T00:20:47.410031",
+    "frequency": 19
+  },
+  "GET:['and']": {
+    "pattern": "GET:['and']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 1.0,
+    "true_positives": 13,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057610",
+    "first_seen": "2026-02-17T00:20:47.410042",
+    "frequency": 13
+  },
+  "GET:[';', 'drop']": {
+    "pattern": "GET:[';', 'drop']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.99,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055112",
+    "first_seen": "2026-02-17T00:20:47.410070",
+    "frequency": 2
+  },
+  "GET:['<script', 'alert(']": {
+    "pattern": "GET:['<script', 'alert(']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 36,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057426",
+    "first_seen": "2026-02-17T00:20:47.410123",
+    "frequency": 36
+  },
+  "GET:['alert(', 'onerror', 'or']": {
+    "pattern": "GET:['alert(', 'onerror', 'or']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 6,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055586",
+    "first_seen": "2026-02-17T00:20:47.410134",
+    "frequency": 6
+  },
+  "GET:['alert(']": {
+    "pattern": "GET:['alert(']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 24,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057487",
+    "first_seen": "2026-02-17T00:20:47.410139",
+    "frequency": 24
+  },
+  "GET:['alert(', 'javascript:']": {
+    "pattern": "GET:['alert(', 'javascript:']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 13,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055648",
+    "first_seen": "2026-02-17T00:20:47.410148",
+    "frequency": 13
+  },
+  "GET:['alert(', 'select']": {
+    "pattern": "GET:['alert(', 'select']",
+    "attack_type": "XSS",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055569",
+    "first_seen": "2026-02-17T00:20:47.410157",
+    "frequency": 2
+  },
+  "GET:[';', 'alert(', 'javascript:', 'or']": {
+    "pattern": "GET:[';', 'alert(', 'javascript:', 'or']",
+    "attack_type": "XSS",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057453",
+    "first_seen": "2026-02-17T00:20:47.410199",
+    "frequency": 2
+  },
+  "GET:[';']": {
+    "pattern": "GET:[';']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 12,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057665",
+    "first_seen": "2026-02-17T00:20:47.410205",
+    "frequency": 12
+  },
+  "GET:['alert(', 'javascript:', 'or']": {
+    "pattern": "GET:['alert(', 'javascript:', 'or']",
+    "attack_type": "XSS",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:20:47.410222",
+    "first_seen": "2026-02-17T00:20:47.410223",
+    "frequency": 1
+  },
+  "GET:['alert(', 'or']": {
+    "pattern": "GET:['alert(', 'or']",
+    "attack_type": "XSS",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:20:47.410232",
+    "first_seen": "2026-02-17T00:20:47.410232",
+    "frequency": 1
+  },
+  "GET:['<script']": {
+    "pattern": "GET:['<script']",
+    "attack_type": "XSS",
+    "confidence": 1.0,
+    "true_positives": 13,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055345",
+    "first_seen": "2026-02-17T00:20:47.410246",
+    "frequency": 13
+  },
+  "GET:/api/data": {
+    "pattern": "GET:/api/data",
+    "attack_type": "PATH_TRAVERSAL",
+    "confidence": 1.0,
+    "true_positives": 33,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057695",
+    "first_seen": "2026-02-17T00:20:47.410346",
+    "frequency": 33
+  },
+  "GET:['|']": {
+    "pattern": "GET:['|']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 1.0,
+    "true_positives": 6,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057559",
+    "first_seen": "2026-02-17T00:20:47.410372",
+    "frequency": 6
+  },
+  "GET:['&']": {
+    "pattern": "GET:['&']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.99,
+    "true_positives": 5,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057567",
+    "first_seen": "2026-02-17T00:20:47.410380",
+    "frequency": 5
+  },
+  "GET:['`']": {
+    "pattern": "GET:['`']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.98,
+    "true_positives": 4,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057570",
+    "first_seen": "2026-02-17T00:20:47.410398",
+    "frequency": 4
+  },
+  "GET:['$(']": {
+    "pattern": "GET:['$(']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.98,
+    "true_positives": 4,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057574",
+    "first_seen": "2026-02-17T00:20:47.410403",
+    "frequency": 4
+  },
+  "GET:['and', '|']": {
+    "pattern": "GET:['and', '|']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057583",
+    "first_seen": "2026-02-17T00:20:47.410669",
+    "frequency": 2
+  },
+  "GET:[';', 'and']": {
+    "pattern": "GET:[';', 'and']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057586",
+    "first_seen": "2026-02-17T00:20:47.410674",
+    "frequency": 2
+  },
+  "GET:['&', 'and']": {
+    "pattern": "GET:['&', 'and']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057590",
+    "first_seen": "2026-02-17T00:20:47.410678",
+    "frequency": 2
+  },
+  "GET:['`', 'and']": {
+    "pattern": "GET:['`', 'and']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057593",
+    "first_seen": "2026-02-17T00:20:47.410683",
+    "frequency": 2
+  },
+  "GET:['$(', 'and']": {
+    "pattern": "GET:['$(', 'and']",
+    "attack_type": "COMMAND_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057598",
+    "first_seen": "2026-02-17T00:20:47.410688",
+    "frequency": 2
+  },
+  "GET:['or', 'select', 'union']": {
+    "pattern": "GET:['or', 'select', 'union']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.99,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055153",
+    "first_seen": "2026-02-17T00:24:50.055146",
+    "frequency": 2
+  },
+  "GET:[';', 'or']": {
+    "pattern": "GET:[';', 'or']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055181",
+    "first_seen": "2026-02-17T00:24:50.055182",
+    "frequency": 1
+  },
+  "GET:[';', 'select']": {
+    "pattern": "GET:[';', 'select']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055192",
+    "first_seen": "2026-02-17T00:24:50.055187",
+    "frequency": 2
+  },
+  "GET:['and', 'select']": {
+    "pattern": "GET:['and', 'select']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055197",
+    "first_seen": "2026-02-17T00:24:50.055197",
+    "frequency": 1
+  },
+  "GET:['and', 'select', 'update']": {
+    "pattern": "GET:['and', 'select', 'update']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055203",
+    "first_seen": "2026-02-17T00:24:50.055203",
+    "frequency": 1
+  },
+  "GET:['and', 'or', 'select']": {
+    "pattern": "GET:['and', 'or', 'select']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055210",
+    "first_seen": "2026-02-17T00:24:50.055210",
+    "frequency": 1
+  },
+  "GET:[';', 'insert', 'or']": {
+    "pattern": "GET:[';', 'insert', 'or']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.98,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055215",
+    "first_seen": "2026-02-17T00:24:50.055215",
+    "frequency": 1
+  },
+  "GET:[';', 'or', 'update']": {
+    "pattern": "GET:[';', 'or', 'update']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.98,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055221",
+    "first_seen": "2026-02-17T00:24:50.055221",
+    "frequency": 1
+  },
+  "GET:[';', 'delete']": {
+    "pattern": "GET:[';', 'delete']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.98,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055228",
+    "first_seen": "2026-02-17T00:24:50.055229",
+    "frequency": 1
+  },
+  "GET:['or', '|']": {
+    "pattern": "GET:['or', '|']",
+    "attack_type": "SQL_INJECTION",
+    "confidence": 0.96,
+    "true_positives": 2,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055259",
+    "first_seen": "2026-02-17T00:24:50.055254",
+    "frequency": 2
+  },
+  "GET:[';', 'alert(', 'javascript:']": {
+    "pattern": "GET:[';', 'alert(', 'javascript:']",
+    "attack_type": "XSS",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055632",
+    "first_seen": "2026-02-17T00:24:50.055632",
+    "frequency": 1
+  },
+  "GET:['<script', 'alert(', 'onerror', 'or']": {
+    "pattern": "GET:['<script', 'alert(', 'onerror', 'or']",
+    "attack_type": "XSS",
+    "confidence": 0.99,
+    "true_positives": 5,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057408",
+    "first_seen": "2026-02-17T00:24:50.055654",
+    "frequency": 5
+  },
+  "GET:['&', ';', 'alert(']": {
+    "pattern": "GET:['&', ';', 'alert(']",
+    "attack_type": "XSS",
+    "confidence": 0.97,
+    "true_positives": 3,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.055704",
+    "first_seen": "2026-02-17T00:24:50.055693",
+    "frequency": 3
+  },
+  "GET:['<script', 'alert(', 'or']": {
+    "pattern": "GET:['<script', 'alert(', 'or']",
+    "attack_type": "XSS",
+    "confidence": 0.95,
+    "true_positives": 1,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057443",
+    "first_seen": "2026-02-17T00:24:50.057444",
+    "frequency": 1
+  },
+  "GET:['&', ';']": {
+    "pattern": "GET:['&', ';']",
+    "attack_type": "XXE",
+    "confidence": 1.0,
+    "true_positives": 3,
+    "false_positives": 0,
+    "last_seen": "2026-02-17T00:24:50.057656",
+    "first_seen": "2026-02-17T00:24:50.057645",
+    "frequency": 3
+  }
+}

@@ -1,0 +1,147 @@
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: zein-mysql
+    environment:
+      MYSQL_DATABASE: zein_security
+      MYSQL_USER: zein_waf
+      MYSQL_PASSWORD: ${DB_PASSWORD:-popyalena07}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-popyalena07}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - zein-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "zein_waf", "-ppopyalena07"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: zein-redis
+    command: redis-server
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - zein-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # AI Service (Python)
+  ai-service:
+    build:
+      context: ./backend/ai-service
+      dockerfile: Dockerfile
+    container_name: zein-ai-service
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/ai-service:/app
+    networks:
+      - zein-network
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Main WAF Service (Go)
+  waf-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: zein-waf-backend
+    environment:
+      - DB_HOST=mysql
+       - DB_PORT=3306
+      - DB_USER=zein_waf
+      - DB_PASSWORD=${DB_PASSWORD:-popyalena07}
+      - DB_NAME=zein_security
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - AI_SERVICE_URL=http://ai-service:5000
+      - JWT_SECRET=${JWT_SECRET:-your-super-secret-jwt-key-change-me}
+    ports:
+      - "8080:8080"
+      - "9090:9090"  # Prometheus metrics
+    volumes:
+      - ./backend:/app
+      - ./logs:/var/log/zein-security
+    networks:
+      - zein-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ai-service:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend (React)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: zein-frontend
+    environment:
+      - REACT_APP_API_URL=http://localhost:8080
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - zein-network
+    depends_on:
+      - waf-backend
+
+  # Nginx Reverse Proxy (Optional - for production)
+  nginx:
+    image: nginx:alpine
+    container_name: zein-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    networks:
+      - zein-network
+    depends_on:
+      - waf-backend
+      - frontend
+    profiles:
+      - production
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  zein-network:
+    driver: bridge
+
+

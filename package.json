@@ -1,0 +1,36 @@
+{
+  "name": "zein-security-waf",
+  "version": "2.0.0",
+  "description": "Zein Security WAF - Advanced Web Application Firewall System",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:simple": "concurrently -n \"DB,AI,Backend,Frontend\" -c \"blue,green,yellow,magenta\" \"npm run dev:db\" \"npm run dev:ai\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:db": "docker-compose up -d mysql redis || echo Docker services starting...",
+    "dev:ai": "cd backend/ai-service && (py -m uvicorn ai:app --host 0.0.0.0 --port 5000 --reload || python -m uvicorn ai:app --host 0.0.0.0 --port 5000 --reload || python3 -m uvicorn ai:app --host 0.0.0.0 --port 5000 --reload)",
+    "dev:backend": "cd backend && go run .",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:ai && npm run build:frontend",
+    "build:backend": "cd backend && go build -o zein-waf main.go",
+    "build:ai": "echo AI service uses Python, no build needed",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend/ai-service && pip install -r requirements.txt",
+    "setup": "npm run install:all && npm run setup:db",
+    "setup:db": "docker-compose up -d mysql redis",
+    "stop": "docker-compose down",
+    "clean": "docker-compose down -v"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "waf",
+    "security",
+    "firewall",
+    "cloudflare",
+    "ddos",
+    "threat-intelligence"
+  ],
+  "author": "Zein Security",
+  "license": "MIT"
+}
+

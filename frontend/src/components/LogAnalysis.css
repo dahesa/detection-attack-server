@@ -1,0 +1,409 @@
+.log-analysis-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analysis-header {
+  margin-bottom: 30px;
+}
+
+.analysis-header h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.analysis-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.analysis-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.control-group label {
+  font-weight: 500;
+  color: #333;
+}
+
+.control-group select {
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.analyze-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.analysis-results {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.threat-alert {
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.threat-alert.threat-detected {
+  background: #f8d7da;
+  border: 2px solid #dc3545;
+  color: #721c24;
+}
+
+.threat-alert.no-threat {
+  background: #d4edda;
+  border: 2px solid #28a745;
+  color: #155724;
+}
+
+.threat-alert h3 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.threat-score {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.risk-level {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.risk-level.critical {
+  background: #dc3545;
+  color: white;
+}
+
+.risk-level.high {
+  background: #fd7e14;
+  color: white;
+}
+
+.risk-level.medium {
+  background: #ffc107;
+  color: #333;
+}
+
+.risk-level.low {
+  background: #28a745;
+  color: white;
+}
+
+.suspicious-ips-section,
+.recommendations-section,
+.attack-detection-section {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.suspicious-ips-section h4,
+.recommendations-section h4,
+.attack-detection-section h4 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 18px;
+}
+
+.suspicious-ips-list {
+  display: grid;
+  gap: 15px;
+}
+
+.suspicious-ip-card {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #dc3545;
+}
+
+.ip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ip-address {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.threat-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.threat-badge.score-6,
+.threat-badge.score-7 {
+  background: #ffc107;
+  color: #333;
+}
+
+.threat-badge.score-8,
+.threat-badge.score-9 {
+  background: #fd7e14;
+  color: white;
+}
+
+.threat-badge.score-10 {
+  background: #dc3545;
+  color: white;
+}
+
+.ip-reason {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.ip-details {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ip-details div {
+  margin-bottom: 5px;
+}
+
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+}
+
+.recommendations-list li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.attack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.attack-card {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  border-top: 4px solid #dc3545;
+}
+
+.attack-type {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.attack-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: #dc3545;
+  margin-bottom: 5px;
+}
+
+.attack-ips {
+  font-size: 13px;
+  color: #666;
+}
+
+.logs-section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logs-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+
+.logs-table {
+  overflow-x: auto;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr 1fr 1fr 2fr;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 1fr 1fr 1fr 2fr;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.table-row:hover {
+  background: #f8f9fa;
+}
+
+.table-row.severity-critical {
+  border-left: 4px solid #dc3545;
+}
+
+.table-row.severity-high {
+  border-left: 4px solid #fd7e14;
+}
+
+.table-row.severity-medium {
+  border-left: 4px solid #ffc107;
+}
+
+.table-row.severity-low {
+  border-left: 4px solid #28a745;
+}
+
+.time-cell {
+  font-size: 13px;
+  color: #666;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.severity-badge.critical {
+  background: #dc3545;
+  color: white;
+}
+
+.severity-badge.high {
+  background: #fd7e14;
+  color: white;
+}
+
+.severity-badge.medium {
+  background: #ffc107;
+  color: #333;
+}
+
+.severity-badge.low {
+  background: #28a745;
+  color: white;
+}
+
+.blocked-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #dc3545;
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.allowed-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #28a745;
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.request-info {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .analysis-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .attack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+

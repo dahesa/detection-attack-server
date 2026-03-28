@@ -1,0 +1,257 @@
+.ip-tracking-map-container {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.map-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.map-stats span {
+  color: #a0aec0;
+  font-size: 14px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 500px;
+  background: #1a1a2e;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.world-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-marker {
+  transition: all 0.3s ease;
+}
+
+.map-marker:hover {
+  opacity: 1 !important;
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    r: 5;
+    opacity: 0.3;
+  }
+  50% {
+    r: 15;
+    opacity: 0.1;
+  }
+  100% {
+    r: 5;
+    opacity: 0.3;
+  }
+}
+
+.country-label {
+  font-weight: 600;
+  pointer-events: none;
+  user-select: none;
+}
+
+.location-details-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background: rgba(30, 30, 46, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-header h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.panel-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.panel-header button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.panel-content {
+  padding: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-row .label {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.detail-row .value {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.detail-row .value.critical {
+  color: #F44336;
+}
+
+.ip-list {
+  margin-top: 20px;
+}
+
+.ip-list h5 {
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+
+.ip-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.ip-address {
+  color: #4FC3F7;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.ip-attacks {
+  color: #F44336;
+  font-weight: 600;
+}
+
+.ip-city {
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+.more-ips {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 12px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.map-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.legend-item span {
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-wrapper {
+    height: 400px;
+  }
+  
+  .location-details-panel {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+  
+  .map-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
